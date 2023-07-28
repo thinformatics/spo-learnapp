@@ -1,0 +1,106 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json",
+    "height": 130,
+    "width": 120,
+    "hideSelection": true,
+    "fillHorizontally": true,
+    "formatter": {
+      "elmType": "div",
+      "attributes": {
+        "class": "sp-card-container"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "attributes": {
+            "class": "sp-card-defaultClickButton"
+          },
+          "customRowAction": {
+            "action": "defaultClick"
+          }
+        },
+        {
+          "elmType": "div",
+          "attributes": {
+            "class": "sp-css-borderColor-neutralLight sp-card-borderHighlight sp-card-subContainer"
+          },
+          "style": {
+            "background-color": "=if ([$CloudPlattform] == 'EMS' , '#F5F9FD' , if ([$CloudPlattform] == 'Office365' , '#EBF9EC' , '#FFF1EF'))",
+            "color": "#ffffff",
+            "padding": "5px",
+            "max-width": "120px"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "attributes": {
+                "class": "sp-card-displayColumnContainer"
+              },
+              "children": [
+                {
+                  "elmType": "img",
+                  "style": {
+                    "position": "absolute",
+                    "margin-left": "67px",
+                    "margin-top": "-15px",
+                    "height": "30px"
+                  },
+                  "attributes": {
+                    "src": "='https://storageaccount001.blob.core.windows.net/learnapp/banner-' + [$Status] + '.svg'",
+                    "alt": "Image",
+                    "title": "Banner"
+                  }
+                },
+                {
+                  "elmType": "p",
+                  "attributes": {
+                    "title": "[$Title]",
+                    "class": "ms-fontColor-neutralPrimary sp-card-highlightedContent",
+                    "role": "heading",
+                    "aria-level": "3"
+                  },
+                  "style": {
+                    "white-space:": "normal",
+                    "font-size": "13px",
+                    "max-height": "30px",
+                    "word-break": "normal"
+                  },
+                  "txtContent": "=if ([$Title] == '', '–', [$Title])"
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "attributes": {
+                "class": "sp-card-displayColumnContainer"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "attributes": {
+                    "class": "sp-card-content sp-card-formatterRef"
+                  },
+                  "children": [
+                    {
+                      "elmType": "img",
+                      "style": {
+                        "margin-top": "35px",
+                        "margin-left": "-15px",
+                        "position": "absolute",
+                        "height": "25px"
+                      },
+                      "attributes": {
+                        "src": "='https://storageaccount001.blob.core.windows.net/learnapp/stars-' + [$Level] + '.svg'",
+                        "alt": "Image",
+                        "title": "Stars"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
